@@ -18,6 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
+@app.route("/get_terminal_blog")
+def get_terminal_blog():
+    blogs = list(mongo.db.terminal_blogs.find())
+    return render_template("tasks.html", terminal_blogs=blogs)
 
 
 if __name__ == "__main__":
