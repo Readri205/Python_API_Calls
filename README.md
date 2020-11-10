@@ -51,3 +51,4 @@ Happy coding!
 - V1.0 Initial Commit
 - V1.1 Add terminal_blog page
 - V1.2 Update terminal_blog page
+- V1.3 Amend app.py for testing app in heroku
