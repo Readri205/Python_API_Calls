@@ -43,3 +43,10 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+## Version Control
+
+- All through the development phase of the project, commits have been made from the GitPod Repository to GitHub. The version control list below mirrors the GitHub Commit list. It is designed to provide a direct track on commits in the README file for easy access as to code status in GitPod.
+
+- V1.0 Initial Commit
+- V1.1 Add terminal_blog page
