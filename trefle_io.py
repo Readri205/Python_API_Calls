@@ -8,16 +8,8 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 
-app.config["YOUR_TREFLE_TOKEN"] = os.environ.get("YOUR_TREFLE_TOKEN")
-
-
-@app.route("/")
-def hello():
-    return "Hello World ... again!"
-
-
 ENDPOINT = "https://trefle.io/api/v1/plants/search?"
-YOUR_TREFLE_TOKEN = ""
+YOUR_TREFLE_TOKEN = os.environ.get("YOUR_TREFLE_TOKEN")
 PAGE_NUMBER = "&page=1"
 
 
@@ -44,10 +36,15 @@ searches = species_filter.json()
 
 # print(plants)
 
-for i in plants['data']:
-    print(i['common_name'])
-    print(i['id'])
-    print(i['family_common_name'])
+
+@app.route("/")
+def hello():
+    return searches
+
+# for i in plants['data']:
+#    print(i['common_name'])
+#    print(i['id'])
+#    print(i['family_common_name'])
 #   print(i['image_url'])
 
 
