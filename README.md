@@ -54,3 +54,4 @@ Happy coding!
 - V1.3 Amend app.py for testing app in heroku
 - V1.4 Add test bed py files for api calls
 - V1.5 Add further test in trefle py for api calls
+- V1.6 Amend trefle html for API plant data
