@@ -31,11 +31,12 @@ PAGE_NUMBER = "&page=2"
 
 
 ENDPOINT_SPECIES = "https://trefle.io/api/v1/species?"
-FILTER = "&filter[flower_color]=red"
+FILTER = "&filter_not[edible_part]=null"
 SEARCH = "&q=Sharon"
 
+
 r = requests.get(
-    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{PAGE_NUMBER}")
+    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{FILTER}")
 
 species_filter = requests.get(
     f"{ENDPOINT_SPECIES}token={YOUR_TREFLE_TOKEN}{FILTER}")
@@ -63,6 +64,7 @@ searches = species_filter.json()
 @app.route("/get_plants")
 def get_plants():
     plant = plants['data']
+    plant = plants['links']
     return render_template("trefle_plants.html", plants=plant)
 
 

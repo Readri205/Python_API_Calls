@@ -56,3 +56,4 @@ Happy coding!
 - V1.5 Add further test in trefle py for api calls
 - V1.6 Amend trefle html for API plant data
 - V1.7 Update trefle html for cards with images
+- V1.8 Update trefle html for plant searches

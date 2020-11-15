@@ -6,8 +6,10 @@
     <div class="col s6 m3">
       <div class="card large">
         <div class="card-image">
-          <img src="{{ plant.image_url }}">
-          <span class="card-title"><strong> {{ plant.common_name.title() }}</strong></span>
+        
+            <img src="{{ plant.image_url }}">
+            
+            <span class="card-title"><strong> {{ plant.common_name }}</strong></span>
         </div>
 		<div class="card-content">
 			
@@ -15,6 +17,7 @@
 				<li> <i class="fas fa-spa teal-text text-lighten-2"></i>Plant ID: <em>{{ plant.id }}</em></li>
 				<li> Family Name: {{ plant.family }}</li>
 				<li>Family Common Name:<em>{{ plant.family_common_name }}</em></li>
+                <li>Genus: {{ plant.genus }}</li>
 			</ul>
 		</div>
         <div class="card-action">
@@ -24,5 +27,7 @@
     </div>
     </li>
     {% endfor %}
+  </ul>
+  <ul>
   </ul>
   {% endblock %}
