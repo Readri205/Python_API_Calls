@@ -6,13 +6,10 @@
     <div class="col s6 m3">
       <div class="card large">
         <div class="card-image">
-        
             <img src="{{ plant.image_url }}">
-            
             <span class="card-title"><strong> {{ plant.common_name }}</strong></span>
         </div>
 		<div class="card-content">
-			
 			<ul>
 				<li> <i class="fas fa-spa teal-text text-lighten-2"></i>Plant ID: <em>{{ plant.id }}</em></li>
 				<li> Family Name: {{ plant.family }}</li>
@@ -29,5 +26,10 @@
     {% endfor %}
   </ul>
   <ul>
+  {% for link in plants %}
+  <li>
+  {{ link.first }}
+  </li>
+  {% endfor %}
   </ul>
   {% endblock %}

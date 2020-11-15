@@ -27,16 +27,16 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 ENDPOINT = "https://trefle.io/api/v1/plants?"
 YOUR_TREFLE_TOKEN = os.environ.get("YOUR_TREFLE_TOKEN")
-PAGE_NUMBER = "&page=2"
+PAGE_NUMBER = "&page=1"
 
 
 ENDPOINT_SPECIES = "https://trefle.io/api/v1/species?"
-FILTER = "&filter_not[edible_part]=null"
+FILTER = "&filter[common_name]=beach%20strawberry"
 SEARCH = "&q=Sharon"
 
 
 r = requests.get(
-    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{FILTER}")
+    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{PAGE_NUMBER}")
 
 species_filter = requests.get(
     f"{ENDPOINT_SPECIES}token={YOUR_TREFLE_TOKEN}{FILTER}")
@@ -64,7 +64,6 @@ searches = species_filter.json()
 @app.route("/get_plants")
 def get_plants():
     plant = plants['data']
-    plant = plants['links']
     return render_template("trefle_plants.html", plants=plant)
 
 
@@ -75,4 +74,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
