@@ -49,8 +49,8 @@ for plant in plants['data']:
 # print(species_filter)
 
 @app.route("/")
-@app.route("/get_plants")
-def get_plants():
+@app.route("/get_trefle")
+def get_trefle():
     plant = plants['data']
     return render_template("trefle_plants.html", plants=plant)
 
