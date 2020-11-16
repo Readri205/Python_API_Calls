@@ -25,7 +25,7 @@ FILTER = "&filter[flower_color]=red"
 SEARCH = "&q=Sharon"
 
 r = requests.get(
-    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}")
+    f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{PAGE_NUMBER}")
 
 species_filter = requests.get(
     f"{ENDPOINT_SPECIES}token={YOUR_TREFLE_TOKEN}{FILTER}")
@@ -51,7 +51,8 @@ for plant in plants['data']:
 @app.route("/")
 @app.route("/get_plants")
 def get_plants():
-    return render_template("trefle_plants.html")
+    plant = plants['data']
+    return render_template("trefle_plants.html", plants=plant)
 
 
 # print(plants)

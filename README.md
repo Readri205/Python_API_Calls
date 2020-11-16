@@ -58,3 +58,4 @@ Happy coding!
 - V1.7 Update trefle html for cards with images
 - V1.8 Update trefle html for plant searches
 - V1.9 Test for additional pages for search
+- V2.0 Add plant variable in get plants app route
