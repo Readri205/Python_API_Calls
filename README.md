@@ -61,3 +61,4 @@ Happy coding!
 - V2.0 Add plant variable in get plants app route
 - V2.1 Update base html for get trefle url
 - V2.2 Update plant search filters
+- V2.3 Update trefle py page

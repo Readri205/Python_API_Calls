@@ -23,7 +23,7 @@ PAGE_NUMBER = "&page=20"
 ENDPOINT_SPECIES = "https://trefle.io/api/v1/species?"
 FILTER = "&filter[common_name]=coconut%20palm"
 STRG = "&q="
-SEARCH = "lily"
+SEARCH = "shoe black"
 
 r = requests.get(
     f"{ENDPOINT}token={YOUR_TREFLE_TOKEN}{STRG}{SEARCH}")
