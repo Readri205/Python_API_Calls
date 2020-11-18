@@ -23,7 +23,7 @@ PAGE_NUMBER = "&page=20"
 ENDPOINT_SPECIES = "https://trefle.io/api/v1/species?"
 FILTER = "&filter[common_name]=coconut%20palm"
 STRG = "&q="
-SEARCH = "lily"
+SEARCH = "rose of sharon"
 
 r = requests.get(
     f"{ENDPOINT}{YOUR_TREFLE_TOKEN}{STRG}{SEARCH}")
@@ -52,9 +52,10 @@ for plant in plants['data']:
     print(f"{species}\n")
 
 links = plants['links']
-current = links['self']
 first = links['first']
-print(f"{current}, {first}")
+current = links['self']
+last = links['last']
+print(f"{current}\n{first}\n{next}\n{last}")
 
 # print(species_filter)
 
